@@ -13,7 +13,7 @@ dependencies = [
     "pandas>=2.3.3",
     "pyarrow>=21.0.0",
     "seaborn>=0.13.2",
-    "spacy[apple]>=3.8.7",
+    "spacy>=3.8.8",
 ]
 
 [dependency-groups]
