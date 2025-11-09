@@ -14,6 +14,7 @@ dependencies = [
     "pyarrow>=21.0.0",
     "seaborn>=0.13.2",
     "spacy>=3.8.8",
+    "spacy[apple]>=3.8.8 ; sys_platform == 'darwin'",
 ]
 
 [dependency-groups]

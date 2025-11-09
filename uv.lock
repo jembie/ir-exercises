@@ -1,6 +1,10 @@
 version = 1
 revision = 3
 requires-python = ">=3.12"
+resolution-markers = [
+    "sys_platform == 'darwin'",
+    "sys_platform != 'darwin'",
+]
 
 [[package]]
 name = "aiohappyeyeballs"
@@ -878,6 +882,7 @@ dependencies = [
     { name = "pyarrow" },
     { name = "seaborn" },
     { name = "spacy" },
+    { name = "spacy", extra = ["apple"], marker = "sys_platform == 'darwin'" },
 ]
 
 [package.dev-dependencies]
@@ -896,6 +901,7 @@ requires-dist = [
     { name = "pyarrow", specifier = ">=21.0.0" },
     { name = "seaborn", specifier = ">=0.13.2" },
     { name = "spacy", specifier = ">=3.8.8" },
+    { name = "spacy", extras = ["apple"], marker = "sys_platform == 'darwin'", specifier = ">=3.8.8" },
 ]
 
 [package.metadata.requires-dev]
@@ -2184,6 +2190,11 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/07/a1/ee722f745e82436c60c45ad28b01165e5d7cb333ed7bd26e87b7fc8a45eb/spacy-3.8.8-cp313-cp313-win_amd64.whl", hash = "sha256:dae73c83c711f7fc3da4b88940681409d0d7be7fc82ff27379c5c038ed889363", size = 14178695, upload-time = "2025-11-07T09:28:32.876Z" },
 ]
 
+[package.optional-dependencies]
+apple = [
+    { name = "thinc-apple-ops", marker = "sys_platform == 'darwin'" },
+]
+
 [[package]]
 name = "spacy-legacy"
 version = "3.0.12"
@@ -2275,6 +2286,20 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/cf/07/6d9b3d7d3b1287bd981523e79ea02006f709dced4a154433b056a7d9bd32/thinc-8.3.8-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:ff09ea0338f0f9dc3de261d14b3298fb8deb06d6f3d6044b4ec40753c31059ea", size = 4813402, upload-time = "2025-11-06T22:19:17.247Z" },
     { url = "https://files.pythonhosted.org/packages/4d/a6/af62670d4a3a6a74b5252cf852e55f9ac7a23da115a875d7516793cb1635/thinc-8.3.8-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:00b641131d9b706083cb0afab423b69cab82a6fcf21e3dcb7355e848c36aa262", size = 5012218, upload-time = "2025-11-06T22:19:18.741Z" },
     { url = "https://files.pythonhosted.org/packages/16/f1/a4eded8df9d9e24945eccfc5be5ec91699912c465c1990a6d76474e18134/thinc-8.3.8-cp313-cp313-win_amd64.whl", hash = "sha256:7ac403db6963d758c8ee6a43adb6f484ed53d0d0066bb114e9644e1c741a9c0f", size = 1714995, upload-time = "2025-11-06T22:19:20.186Z" },
+]
+
+[[package]]
+name = "thinc-apple-ops"
+version = "1.0.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy", marker = "sys_platform == 'darwin'" },
+    { name = "thinc", marker = "sys_platform == 'darwin'" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/0d/44/15fa7fd8c4f3011f29393a1aed7616b3991fb7562ef044a31a818c25558f/thinc_apple_ops-1.0.0.tar.gz", hash = "sha256:97238eb6693e758bfdcf1ac8e92c064bbe893ab74a6a3a4237c5bdf17318e502", size = 63163, upload-time = "2024-10-01T09:54:04.474Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/9c/08/c223217366308b794105b3269a5de183e898d0eb7d316143c33ca0d44d13/thinc_apple_ops-1.0.0-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:b2a9d2d3e8b86c9ce4750affc1b6c7350ef92fff3d33249302aeafee20f3e09e", size = 162967, upload-time = "2024-10-01T09:53:59.094Z" },
+    { url = "https://files.pythonhosted.org/packages/c9/5d/cacc702a8c7d6b5f19181819104b3d7d534598551d75a08d1c99ae96c869/thinc_apple_ops-1.0.0-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:1594f897f7dd03212d5b1ae1e4054be02526da530201a09c32d7bb557d274902", size = 157725, upload-time = "2024-10-01T09:54:00.201Z" },
 ]
 
 [[package]]
