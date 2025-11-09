@@ -28,7 +28,7 @@ pip install uv
 1. First, clone the repository
 ```bash
 git clone git@github.com:jembie/ir-exercises.git
-cd information-retrieval-exercises/
+cd ir-exercises/
 ```
 
 2. Then install the required dependencies
